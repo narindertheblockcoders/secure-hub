@@ -1,0 +1,397 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 30;
+  --cltheader-color:#90959a;
+  --clttextwhite:#fff;
+
+  /* font-family */
+  --prim-font: "Montserrat", sans-serif;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb))) fixed;
+}
+
+.shadow-glow {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5), 0 0 30px rgba(124, 58, 237, 0.3);
+}
+.containerfull{
+  max-width: 90%;
+  margin: 0px auto;
+  width: 100%;
+}
+.subheading {
+  font-size: 26px;
+  color: #f1f1f1;
+  margin: 30px 0px;
+  max-width: 40rem;
+}
+span.headingTag {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.paragrph {
+  font-size: 16px;
+}
+.homesec{
+  max-width: 74rem;
+}
+.mainheding {
+  font-weight: 500;
+  font-family: 'Atlassian Sans';
+  color: var(--clttextwhite);
+  /* max-width: 48rem; */
+  line-height: 1.1;
+  font-size: 4.2rem;
+  width: 76%;
+}
+/* aboutsec */
+.aboutsec h2 , .thirdweb h2 {
+  color: var(--cltheader-color);
+  font-size: 2.5rem;
+  letter-spacing: .05rem;
+  line-height: 1.2;
+  font-weight: 500;
+  font-family: 'Atlassian Sans';
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.thirdweb h2 {
+  max-width: 46rem;
+  line-height: 1.4;
+  color: var(--clttextwhite);
+}
+.aboutsec .aboutsec b {
+  color:var(--clttextwhite);
+}
+
+.aboutsec {
+  float: left;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+/* aboutsec end*/
+
+/* thirdsec */
+.thirdwebContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.thirdweb .maniPara {
+  max-width: 30rem;
+  margin-right: 0px;
+  padding: 10vw 0px 0px;
+}
+/* thirdsec end*/
+@media (max-width:1366px){
+  .mainheding {
+    max-width: 33rem;
+    font-size: 3rem;
+}
+.homesec p.subheading {
+  margin: 10px 0px;
+  max-width: 30rem;
+  font-size: 17px;
+  line-height: 26px;
+}
+.homesec p {
+  font-size: 13px;
+  line-height: 22px;
+  max-width: 30rem;
+}
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Scrollbar Track */
+/* ::-webkit-scrollbar-track {
+  background: rgba(204, 0, 0, 0.007);
+  border-radius: 10px;
+} */
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Grey background for the track */
+  border-radius: 10px;
+}
+/* Scrollbar Thumb */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(0, 153, 255, 0.8), rgba(136, 0, 255, 0.8));
+  border-radius: 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Scrollbar Hover Effect */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(0, 153, 255, 1), rgba(136, 0, 255, 1));
+}
+
+/* Scrollbar Corner (where vertical & horizontal bars meet) */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+/* Loading section design */
+
+/* Container for the entire screen */
+/* Loading Container */
+.loading-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../public/background.jpg) no-repeat center center/cover;
+  overflow: hidden;
+}
+
+/* Centered Loading Section */
+.loading-section {
+  position: relative;
+  text-align: center;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Rocket */
+.rocket {
+  position: absolute;
+  bottom: 0; /* Start from the bottom of the screen */
+  transition: width 1s ease-in-out;
+}
+
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Apply the upDown animation globally */
+/* Slide-in animation */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100vh); /* Start above the viewport */
+    opacity: 0; /* Initially invisible */
+  }
+  100% {
+    transform: translateY(0); /* End at the target position */
+    opacity: 1; /* Fully visible */
+  }
+}
+
+/* Up and down animation for continuous movement */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-300px); /* Start off the screen */
+  }
+  100% {
+    transform: translateY(0); /* End at its final position */
+  }
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0); 
+  }
+  50% {
+    transform: translateY(-10px); 
+  }
+  100% {
+    transform: translateY(0); 
+  }
+}
+
+/* Apply both animations to the rocket */
+.upDown-animation {
+  width: 100%;
+  height: 100%;
+  animation: 
+    slideInFromTop 1s ease-out forwards, /* Slide in once when page loads */
+    upDown 2s ease-in-out infinite 1s; /* Up and down on scroll with delay */
+}
+.aboutsec .aboutsec {
+  max-width: 50rem;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  border-top: .0625rem solid #90959a;
+  padding: 30px 0px 0px;
+}
+.aboutsec .aboutsec b{
+  color: #fff;
+}
+/* Planet Animation */
+.planet {
+  position: absolute;
+  top: 10%;
+  transform: translateX(-50%);
+  z-index: 1;
+  filter: hue-rotate(120deg); /* Apply color adjustment to match the theme */
+}
+
+/* Rocket Container */
+.rocket-container {
+  position: absolute;
+  left: 50%;
+  bottom: -20%;
+  transform: translateX(-50%);
+  z-index: 10;
+  opacity: 0;
+  animation: rocketAnimation 5s ease-in-out forwards;
+}
+
+/* Rocket Image Styling */
+/* .rocket {
+  width: 100px;
+  transition: width 1s ease-in-out;
+  filter: hue-rotate(120deg);
+} */
+
+/* Rocket Animation */
+@keyframes rocketAnimation {
+  0% {
+    bottom: 0%;
+    opacity: 1;
+  }
+  50% {
+    bottom: 50%;
+    transform: translateX(-50%) scale(5);
+    opacity: 1;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+
+/* Progress Bar Container */
+.progress-bar-container {
+  width: 80%;
+  height: 20px;
+  background: rgba(220, 220, 220, 0.445);
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+/* Progress Bar with Gradient */
+.progress-bar {
+  height: 15px;
+  background: linear-gradient(180deg, rgba(0, 153, 255, 1), rgba(136, 0, 255, 1));
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+/* Progress Percentage */
+.progress-percentage {
+  position: absolute;
+  top: 68%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #333;
+  z-index: 1;
+}
+
+.progress-percentage p {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 800;
+  padding-top: 10px;
+}
+
+/* Loading Complete Text */
+.loading-complete-text {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradient from blue to dark blue */
+  -webkit-background-clip: text;
+  font-size: 1.5rem;
+  color: transparent;
+}
+.bann-content{
+  
+  /* background: rgba(223, 228, 231, 0.8); */
+  border-radius: 100% 100% 0 0;
+  padding-top: 100px;
+  bottom: 0;
+}
+.bann-title,
+.bann-subtitle{
+  font-family: var(--prim-font);
+  font-size: 22px ;
+}
+.bann-title{
+  /* letter-spacing: 16px; */
+  /* text-shadow: 2px 2px #1482b7; */
+  font-family: inherit;
+  font-size: 48px;
+  font-weight: bolder;
+	background: linear-gradient(to right, #30CFD0 0%, #ffffff 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/* .planet{
+  filter: drop-shadow(0 0 20px rgba(0, 150, 255, 0.8));
+  top: unset !important;
+  bottom: 0;
+  right: unset !important;
+}
+.planet img{
+  height: 800px;
+  width: 100%;
+  object-fit: cover;
+  margin-inline: auto;
+} */
+
+.bann-video{
+  position: absolute;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw !important;
+  object-fit: cover; 
+}
+.bann-overlay{
+  position: absolute;
+  content: '';
+  left: 0;
+  background-color: #00000073;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
